@@ -1,12 +1,18 @@
+import Footer from "@/components/Footer";
+import CategorySection from "@/components/lp/Category";
+import Hero from "@/components/lp/Hero";
+import Latest from "@/components/lp/Latest";
+import Product from "@/components/lp/Product";
 import Navbar from "@/components/Navbar";
-import { Button } from "@/shared/shadcn/button";
-import Image from "next/image";
 export default function Home() {
   return (
     <div>
       <Navbar/>
-      <Button>Hai</Button>
+      <Hero />
+      <CategorySection />
+      <Latest />
+      <Product />
+      <Footer />
     </div>
-
   );
 }

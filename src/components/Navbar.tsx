@@ -1,15 +1,23 @@
+"use client";
+
 import React from "react";
 import { Search, ShoppingBag } from "lucide-react";
 
 export default function Navbar() {
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
-    <header className="w-full">
+  <header className="w-full fixed top-0 z-50">
       {/* TOP BAR */}
       <div className="w-full h-10 bg-black text-white flex items-center px-6 text-sm">
         <div className="flex-1">Logo</div>
-
         <div className="flex-1 text-center tracking-widest">~ PROMO ~</div>
-
         <div className="flex-1 text-right">Support</div>
       </div>
 
@@ -17,57 +25,38 @@ export default function Navbar() {
       <div className="w-full h-14 bg-white border-b">
         <div className="max-w-7xl h-full mx-auto flex items-center justify-between px-6">
           {/* LEFT */}
-          <div className="flex items-center gap-10 font-medium">
-            <span className="text-lg font-semibold">Website</span>
+          <div className="flex items-center gap-28 font-medium">
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="text-lg font-semibold"
+            >
+              Stonie
+            </button>
 
-            <nav className="flex gap-5 text-gray-600">
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
-              <a href="#" className="hover:text-black">
-                Lorem
-              </a>
+            <nav className="flex gap-10 text-gray-600">
+              <button onClick={() => scrollToSection("category")} className="hover:text-black">
+                Category
+              </button>
+              <button onClick={() => scrollToSection("latest")} className="hover:text-black">
+                Latest
+              </button>
+              <button onClick={() => scrollToSection("product")} className="hover:text-black">
+                Product
+              </button>
             </nav>
           </div>
 
           {/* RIGHT */}
           <div className="flex items-center gap-6 text-gray-700">
-            {/* Search */}
-            <div className="flex items-center gap-1 cursor-pointer hover:text-black">
+            <button className="flex items-center gap-1 hover:text-black">
               <Search size={18} />
               <span>Search</span>
-            </div>
+            </button>
 
-            {/* Cart
-            <div className="relative cursor-pointer hover:text-black">
-              <ShoppingBag size={18} />
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-                3
-              </span>
-            </div> */}
-
-            {/* Login */}
-            <a href="#" className="hover:text-black">
-              Login
-            </a>
+            <button className="hover:text-black">Login</button>
           </div>
         </div>
       </div>
     </header>
-  );
+  )
 }
