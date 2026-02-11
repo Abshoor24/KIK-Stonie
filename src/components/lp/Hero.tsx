@@ -13,7 +13,7 @@ export default function Hero() {
       />
 
       {/* Overlay putih kiri */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-8 flex flex-col justify-center">

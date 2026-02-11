@@ -1,4 +1,5 @@
 import Image from "next/image"
+import categories from "@/shared/data/categories.json"
 
 export default function CategorySection() {
   return (
@@ -20,45 +21,22 @@ export default function CategorySection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="text-center">
-            <div className="relative w-full h-64 mb-4 overflow-hidden">
-              <Image
-                src="/batu1.png"
-                alt="Batu hias"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="font-medium">Batu hias</p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="text-center">
-            <div className="relative w-full h-64 mb-4 overflow-hidden">
-              <Image
-                src="/batu2.png"
-                alt="Batu hias"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="font-medium">Batu hias</p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="text-center">
-            <div className="relative w-full h-64 mb-4 overflow-hidden">
-              <Image
-                src="/batu3.jpg"
-                alt="Batu hias"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="font-medium">Batu hias</p>
-          </div>
+        <div className="flex flex-col md:flex-row gap-8">
+          {categories.map(({ name, image_url }, i) => {
+            return (
+              <div key={i} className="w-full text-center">
+                <div className="relative w-full h-64 mb-4 overflow-hidden">
+                  <Image
+                    src={image_url}
+                    alt={name}
+                    fill
+                    className="object-cover hover:scale-110 transition duration-500"
+                  />
+                </div>
+                <p className="font-semibold">{name}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

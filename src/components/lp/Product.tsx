@@ -1,4 +1,5 @@
 import Image from "next/image"
+import products from "@/shared/data/products.json"
 
 export default function Product() {
   return (
@@ -22,56 +23,25 @@ export default function Product() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Card 1 */}
-          <div className="bg-white">
-            <div className="relative w-full h-[320px]">
-              <Image
-                src="/p1.png"
-                alt="Batu"
-                fill
-                className="object-contain"
-              />
-            </div>
+          {products.map(({ name, image_url, price }, i) => {
+            return (
+              <div key={i} className="bg-white">
+                <div className="relative w-full h-[320px]">
+                  <Image
+                    src={image_url}
+                    alt={name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
 
-            <div className="p-4">
-              <p className="text-sm font-medium">Batu</p>
-              <p className="text-sm text-gray-500">$99</p>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-white">
-            <div className="relative w-full h-[320px]">
-              <Image
-                src="/p2.png"
-                alt="Batu"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <div className="p-4">
-              <p className="text-sm font-medium">Batu</p>
-              <p className="text-sm text-gray-500">$99</p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white">
-            <div className="relative w-full h-[320px]">
-              <Image
-                src="/p3.png"
-                alt="Batu"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            <div className="p-4">
-              <p className="text-sm font-medium">Batu</p>
-              <p className="text-sm text-gray-500">$99</p>
-            </div>
-          </div>
+                <div className="p-4">
+                  <p className="text-sm font-semibold">{name}</p>
+                  <p className="text-sm font-medium text-gray-500">{price}</p>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

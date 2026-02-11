@@ -1,4 +1,5 @@
 import Image from "next/image"
+import posts from "@/shared/data/posts.json"
 
 export default function Latest() {
   return (
@@ -21,42 +22,21 @@ export default function Latest() {
 
         {/* Cards */}
         <div className="flex justify-center">
-          <div className="flex gap-12 items-end">
+          <div className="flex gap-12 items-center">
             {/* LEFT CARD */}
-            <div className="w-[300px] bg-[#F4F0E6] p-6">
-              <div className="relative w-full h-[360px]">
-                <Image
-                  src="/l1.jpg"
-                  alt="Produk Batu 1"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* CENTER CARD (IMAGE) */}
-            <div className="w-[300px] bg-[#FAEFE3] p-6 h-[420px]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/l2.jpg"
-                  alt="Produk Batu Utama"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* RIGHT CARD */}
-            <div className="w-[300px] bg-[#F6EAD9] p-6">
-              <div className="relative w-full h-[360px]">
-                <Image
-                  src="/l3.jpg"
-                  alt="Produk Batu 3"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+            {posts.map(({ name, image_url }, i) => {
+              return (
+                <div key={i} className="w-[300px] h-[360px] bg-[#F4F0E6] p-6">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={image_url}
+                      alt={name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>)
+            })}
           </div>
         </div>
       </div>
