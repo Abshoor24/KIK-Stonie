@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Search, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
 
@@ -13,10 +14,12 @@ export default function Navbar() {
   }
 
   return (
-  <header className="w-full fixed top-0 z-50">
+    <header className="w-full fixed top-0 z-50">
       {/* TOP BAR */}
       <div className="w-full h-10 bg-black text-white flex items-center px-6 text-sm">
-        <div className="flex-1">Logo</div>
+        <div className="flex items-center justify-center w-18 h-32 overflow-hidden">
+          <Image src={"/assets/logo.png"} alt="Logo" width={100} height={100} className="w-full h-full object-cover" />
+        </div>
         <div className="flex-1 text-center tracking-widest">~ PROMO ~</div>
         <div className="flex-1 text-right">Support</div>
       </div>
