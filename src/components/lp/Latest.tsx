@@ -1,7 +1,11 @@
+"use client"
+
 import Image from "next/image"
 import posts from "@/shared/data/posts.json"
+import { useRouter } from "next/navigation"
 
 export default function Latest() {
+  const router = useRouter()
   return (
     <section id="latest" className="h-screen w-full bg-gray-100 flex items-center">
       <div className="max-w-7xl mx-auto px-8 w-full">
@@ -15,7 +19,7 @@ export default function Latest() {
             terbaik yang siap melengkapi gaya dan kebutuhan Anda.
           </p>
 
-          <button className="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
+          <button onClick={() => router.push("/shop")} className="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
             Belanja
           </button>
         </div>
