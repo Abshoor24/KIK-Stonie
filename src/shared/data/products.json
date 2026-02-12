@@ -1,17 +1,17 @@
 [
     {
         "name": "Batu Bangunan",
-        "image_url": "/p1.png",
+        "image_url": "/assets/p1.png",
         "price": "Rp.100K/pack"
     },
     {
         "name": "Batu Akik",
-        "image_url": "/p2.png",
+        "image_url": "/assets/p2.png",
         "price": "Rp.100K/pack"
     },
     {
         "name": "Batu Giok",
-        "image_url": "/p3.png",
+        "image_url": "/assets/p3.png",
         "price": "Rp.100K/pack"
     }
 ]

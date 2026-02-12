@@ -1,14 +1,14 @@
 [
     {
         "name": "Batu Hias",
-        "image_url": "/batu1.png"
+        "image_url": "/assets/batu1.png"
     },
     {
         "name": "Batu Konstruksi",
-        "image_url": "/andesit.jpg"
+        "image_url": "/assets/andesit.jpg"
     },
     {
         "name": "Batu Industri",
-        "image_url": "/batukapur.jpg"
+        "image_url": "/assets/batukapur.jpg"
     }
 ]

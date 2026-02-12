@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="hero" className="relative w-full h-[500px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/batuhero.png"
+        src="/assets/batuhero.png"
         alt="Stone Background"
         fill
         priority

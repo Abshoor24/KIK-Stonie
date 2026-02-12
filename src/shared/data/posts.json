@@ -1,14 +1,14 @@
 [
     {
         "name": "Batu Hias",
-        "image_url": "/l1.jpg"
+        "image_url": "/assets/l1.jpg"
     },
     {
         "name": "Batu Hias",
-        "image_url": "/l2.jpg"
+        "image_url": "/assets/l2.jpg"
     },
     {
         "name": "Batu Hias",
-        "image_url": "/l3.jpg"
+        "image_url": "/assets/l3.jpg"
     }
 ]
