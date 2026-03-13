@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import products from "@/shared/data/shop.json";
-import Cart from "@/components/Cart";
+import Cart from "@/components/Button/Cart";
 
 export default function ShopPage() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -23,20 +23,14 @@ export default function ShopPage() {
       : products.filter((p) => filters.includes(p.category));
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sort === "low") {
-      return a.price - b.price;
-    }
-
-    if (sort === "high") {
-      return b.price - a.price;
-    }
-
-    return 0; // popular = default
+    if (sort === "low") return a.price - b.price;
+    if (sort === "high") return b.price - a.price;
+    return 0;
   });
 
   return (
     <main className="bg-gray-100 text-gray-900 pt-30">
-
+      
       {/* HEADER */}
       <section className="max-w-6xl mx-auto px-6 mb-10">
         <h1 className="text-3xl font-bold mb-3">Shop</h1>
@@ -75,13 +69,14 @@ export default function ShopPage() {
                 <input type="checkbox" onChange={() => toggleFilter("asteroid")} />
                 Batu Asteroid
               </label>
+
               <label className="flex gap-2 items-center">
                 <input type="checkbox" onChange={() => toggleFilter("aestetik")} />
                 Batu Aestetik
               </label>
-              
             </div>
           </div>
+
 
           {/* SORT */}
           <div className="flex flex-col items-start md:items-end text-sm">
@@ -107,28 +102,37 @@ export default function ShopPage() {
       {/* PRODUCT GRID */}
       <section className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {sortedProducts.map((product, i) => (
-            <div key={i} className="group flex flex-col w-full rounded-sm shadow overflow-hidden">
-              <div className="bg-white">
-                <div className="relative w-full h-55 mb-3 rounded-sm">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="group-hover:scale-105 w-full object-cover transition duration-500"
-                  />
-                </div>
-                <div className="flex flex-col items-start justify-start w-full gap-1 p-4">
-                  <h4 className="font-semibold text-lg">{product.name}</h4>
-                  <p className="text-gray-600 text-sm p-4">
-                    ${product.price}
-                  </p>
 
-                  <Cart  />
-                </div>
+          {sortedProducts.map((product) => (
+            <div
+              key={product.id}
+              className="group flex flex-col w-full rounded-sm shadow overflow-hidden bg-white"
+            >
+              <div className="relative w-full h-55">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="group-hover:scale-105 object-cover transition duration-500"
+                />
+              </div>
+
+              <div className="flex flex-col items-start gap-2 p-4">
+
+                <h4 className="font-semibold text-lg">
+                  {product.name}
+                </h4>
+
+                <p className="text-gray-600 text-sm">
+                  ${product.price}
+                </p>
+
+                <Cart product={product} />
+
               </div>
             </div>
           ))}
+
         </div>
       </section>
 
@@ -173,6 +177,6 @@ export default function ShopPage() {
 
       </section>
 
-    </main >
+    </main>
   );
 }

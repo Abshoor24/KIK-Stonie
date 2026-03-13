@@ -1,7 +1,7 @@
 "use client";
 
 import { ProductType } from "@/types/product";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 type CartItem = ProductType & { qty: number };
 
@@ -16,9 +16,20 @@ type CartContextType = {
 const CartContext = createContext<CartContextType | null>(null);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
 
-  // ADD TO CART
+  // laoad dari localStorage tanpa useEffect
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    if (typeof window === "undefined") return [];
+
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  // saave ke localStorage saat cart berubah
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (product: ProductType) => {
     setCart((prev) => {
       const existing = prev.find((p) => p.id === product.id);
@@ -33,7 +44,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  // INCREASE QTY
   const increaseCart = (productId: string) => {
     setCart((prev) =>
       prev.map((p) =>
@@ -42,7 +52,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
-  // DECREASE QTY
   const decreaseCart = (productId: string) => {
     setCart((prev) =>
       prev.map((p) =>
@@ -53,7 +62,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
-  // REMOVE ITEM
   const removeItem = (productId: string) => {
     setCart((prev) => prev.filter((p) => p.id !== productId));
   };

@@ -4,6 +4,7 @@
     "name": "Batu Bangunan",
     "description": "Batu untuk kebutuhan bangunan",
     "price": 40,
+    "category": "bangunan",
     "image": "/assets/batu-bangunan.png"
   },
   {
@@ -11,6 +12,7 @@
     "name": "Batu Hias",
     "description": "Batu dekorasi taman",
     "price": 50,
+    "category": "hias",
     "image": "/assets/batu-hias.jpg"
   },
   {
@@ -18,6 +20,7 @@
     "name": "Batu Kolam Ikan",
     "description": "Batu untuk kolam ikan",
     "price": 35,
+    "category": "kolam",
     "image": "/assets/batu-kolam.jpg"
   },
   {
@@ -25,6 +28,7 @@
     "name": "Batu Aestetik",
     "description": "Batu estetika dekorasi",
     "price": 45,
+    "category": "aestetik",
     "image": "/assets/batu-aestetich.jpg"
   },
   {
@@ -32,6 +36,7 @@
     "name": "Batu Granit",
     "description": "Batu granit premium",
     "price": 90,
+    "category": "granit",
     "image": "/assets/batu-granit.jpg"
   },
   {
@@ -39,6 +44,9 @@
     "name": "Batu Asteroid",
     "description": "Batu langka dari luar angkasa",
     "price": 1000,
+    "category": "asteroid",
     "image": "/assets/batu-asteroid.png"
   }
 ]
+
+
