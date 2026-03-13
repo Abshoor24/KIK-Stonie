@@ -88,9 +88,7 @@ export default function ShopPage() {
 
       {/* FILTER */}
       <section className="max-w-6xl mx-auto px-6 mb-10">
-
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-
           <div>
             <h3 className="font-semibold mb-3">Filters</h3>
 
@@ -117,7 +115,6 @@ export default function ShopPage() {
             </div>
           </div>
 
-
           {/* SORT */}
           <div className="flex flex-col items-start md:items-end text-sm">
             <select
@@ -134,45 +131,35 @@ export default function ShopPage() {
               Showing {sortedProducts.length} products
             </span>
           </div>
-
         </div>
-
       </section>
 
 
 
       {/* PRODUCT GRID */}
       <section className="max-w-6xl mx-auto px-6">
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-
           {sortedProducts.map((product, i) => (
-            <div key={i} className="group">
-
-              <div className="bg-white p-4">
-
-                <div className="relative w-full h-[220px] mb-3">
+            <div key={i} className="group flex flex-col w-full rounded-sm shadow overflow-hidden">
+              <div className="bg-white">
+                <div className="relative w-full h-[220px] mb-3 rounded-sm">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover"
+                    className="group-hover:scale-105 w-full object-cover transition duration-500"
                   />
                 </div>
-
-                <h4 className="font-medium">{product.name}</h4>
-
-                <p className="text-gray-600 text-sm">
-                  ${product.price}
-                </p>
-
+                <div className="flex flex-col items-start justify-start w-full gap-1 p-4">
+                  <h4 className="font-semibold text-lg">{product.name}</h4>
+                  <p className="text-gray-600 text-sm p-4">
+                    ${product.price}
+                  </p>
+                </div>
               </div>
-
             </div>
           ))}
-
         </div>
-
       </section>
 
 
@@ -216,6 +203,6 @@ export default function ShopPage() {
 
       </section>
 
-    </main>
+    </main >
   );
 }
