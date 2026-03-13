@@ -3,6 +3,7 @@
 import React from "react";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
+import Buy from "@/components/Button/Buy";
 
 export default function CartPage() {
   const { cart, increaseCart, decreaseCart, removeItem } = useCart();
@@ -106,9 +107,7 @@ export default function CartPage() {
           </div>
 
           {/* CHECKOUT BUTTON */}
-          <button className="w-full bg-black text-white py-3">
-            Continue to checkout
-          </button>
+          <Buy/>
         </div>
       </div>
     </div>
