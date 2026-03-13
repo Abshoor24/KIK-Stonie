@@ -26,7 +26,7 @@ export default function Product() {
           {products.map(({ name, image_url, price }, i) => {
             return (
               <div key={i} className="bg-white">
-                <div className="relative w-full h-[320px]">
+                <div className="relative w-full h-80">
                   <Image
                     src={image_url}
                     alt={name}

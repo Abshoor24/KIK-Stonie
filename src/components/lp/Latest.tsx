@@ -30,7 +30,7 @@ export default function Latest() {
             {/* LEFT CARD */}
             {posts.map(({ name, image_url }, i) => {
               return (
-                <div key={i} className="w-[300px] h-[360px] bg-[#F4F0E6] p-6">
+                <div key={i} className="w-75 h-90 bg-[#F4F0E6] p-6">
                   <div className="relative w-full h-full">
                     <Image
                       src={image_url}

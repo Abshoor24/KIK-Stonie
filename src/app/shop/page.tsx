@@ -2,45 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-const products = [
-  {
-    name: "Batu Bangunan",
-    price: 40,
-    category: "bangunan",
-    image: "/assets/batu-bangunan.png"
-  },
-  {
-    name: "Batu Hias",
-    price: 50,
-    category: "hias",
-    image: "/assets/batu-hias.jpg"
-  },
-  {
-    name: "Batu Kolam Ikan",
-    price: 35,
-    category: "kolam",
-    image: "/assets/batu-kolam.jpg"
-  },
-  {
-    name: "Batu Aestetik",
-    price: 45,
-    category: "aestetik",
-    image: "/assets/batu-aestetich.jpg"
-  },
-  {
-    name: "Batu Granit",
-    price: 90,
-    category: "granit",
-    image: "/assets/batu-granit.jpg"
-  },
-  {
-    name: "Batu Asteroid",
-    price: 1000,
-    category: "asteroid",
-    image: "/assets/batu-asteroid.png"
-  }
-];
+import products from "@/shared/data/shop.json";
+import Cart from "@/components/Cart";
 
 export default function ShopPage() {
   const [filters, setFilters] = useState<string[]>([]);
@@ -112,6 +75,11 @@ export default function ShopPage() {
                 <input type="checkbox" onChange={() => toggleFilter("asteroid")} />
                 Batu Asteroid
               </label>
+              <label className="flex gap-2 items-center">
+                <input type="checkbox" onChange={() => toggleFilter("aestetik")} />
+                Batu Aestetik
+              </label>
+              
             </div>
           </div>
 
@@ -142,7 +110,7 @@ export default function ShopPage() {
           {sortedProducts.map((product, i) => (
             <div key={i} className="group flex flex-col w-full rounded-sm shadow overflow-hidden">
               <div className="bg-white">
-                <div className="relative w-full h-[220px] mb-3 rounded-sm">
+                <div className="relative w-full h-55 mb-3 rounded-sm">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -155,6 +123,8 @@ export default function ShopPage() {
                   <p className="text-gray-600 text-sm p-4">
                     ${product.price}
                   </p>
+
+                  <Cart  />
                 </div>
               </div>
             </div>
