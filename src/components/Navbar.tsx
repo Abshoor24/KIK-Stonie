@@ -71,6 +71,12 @@ export default function Navbar() {
             >
               Shop
             </button>
+            <button
+              onClick={() => router.push("/about")}
+              className="hover:text-black transition"
+            >
+              About Us
+            </button>
           </nav>
 
           {/* CART ICON (RIGHT) */}

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 export default function Latest() {
   const router = useRouter()
   return (
-    <section id="latest" className="h-screen w-full bg-gray-100 flex items-center">
+    <section id="latest" className="h-screen w-full bg-gray-100 flex items-center pt-10">
       <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="text-center mb-16">

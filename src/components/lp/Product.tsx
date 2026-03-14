@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image"
 import products from "@/shared/data/products.json"
+import { useRouter } from "next/navigation"
 
 export default function Product() {
+
+  const router = useRouter()
+
   return (
-    <section id="product" className="h-screen w-full bg-gray-100 flex items-center">
+    <section id="product" className="h-screen w-full bg-gray-100 flex items-center pt-16">
       <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="text-center mb-16">
@@ -16,22 +22,24 @@ export default function Product() {
             memenuhi kebutuhan Anda.
           </p>
 
-          <button className="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
-            Belanja
+          <button className="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition"
+          onClick={() => router.push("/shop")}
+          >
+            Selengkapnya
           </button>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {products.map(({ name, image_url, price }, i) => {
+          {products.map(({ name, image, price }, i) => {
             return (
               <div key={i} className="bg-white">
                 <div className="relative w-full h-80">
                   <Image
-                    src={image_url}
+                    src={image}
                     alt={name}
                     fill
-                    className="object-contain"
+                    className="group-hover:scale-105 object-cover transition duration-500"
                   />
                 </div>
 
