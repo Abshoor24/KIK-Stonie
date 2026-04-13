@@ -1,42 +1,40 @@
-import Image from "next/image"
+"use client";
 
+import Image from "next/image"
+import TextType from "@/shared/shadcn/TextType";
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden ">
-      {/* Background Image */}
-      <Image
-        src="/assets/batuhero.png"
-        alt="Stone Background"
-        fill
-        priority
-        className="object-cover"
-      />
+    <section id="hero" className="relative w-full h-screen overflow-hidden">
 
-      {/* Overlay putih kiri */}
-      <div className="absolute inset-0 bg-linear-to-r from-white/90 via-white/50 to-transparent" />
+  {/* Background */}
+  <Image
+    src="/bgBatu.png"
+    alt="Stone Background"
+    fill
+    priority
+    className="object-cover absolute inset-0 -z-10"
+    sizes="100vw"
+  />
 
-      {/* Content */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-8 flex flex-col justify-center">
-        {/* Brand */}
-        <p className="text-sm tracking-widest font-semibold text-black mb-4">
-          STONIE OFFICIAL
-        </p>
+  {/* Headline (center) */}
+  <div className="relative z-10 h-full flex items-center justify-center px-8">
+<h1 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[1.2] tracking-tight text-black text-center max-w-4xl mx-auto">
+      
 
-        {/* Headline */}
-        <h1 className="text-3xl md:text-4xl font-bold leading-snug text-black">
-          <span className="block">
-            # Jika di sakiti, jangan di ambil hati.
-          </span>
-          <span className="block">
-            Di usahakan ambil stone dari stonie
-          </span>
-        </h1>
+<TextType 
+  text={["Jika di sakiti, jangan di ambil hati. Di usahakan ambil stone dari stonie"]}
+  typingSpeed={50}
+  pauseDuration={2000}
+  showCursor
+  cursorCharacter="|"
+  deletingSpeed={20}
+  cursorBlinkDuration={0.5}
+  variableSpeed={false}
+  onSentenceComplete={() => {}}
+/>
+    </h1>
+  </div>
 
-        {/* Button */}
-        <button className="mt-6 w-fit border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
-          Cek lebih lanjut
-        </button>
-      </div>
-    </section>
+</section>
   )
 }

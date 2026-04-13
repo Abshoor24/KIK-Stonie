@@ -72,7 +72,7 @@ export default function ShopPage() {
 
               <label className="flex gap-2 items-center">
                 <input type="checkbox" onChange={() => toggleFilter("aestetik")} />
-                Batu Aestetik
+                Batu Estetik
               </label>
             </div>
           </div>
