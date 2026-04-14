@@ -9,7 +9,7 @@ export default function Product() {
   const router = useRouter()
 
   return (
-    <section id="product" className="h-screen w-full bg-gray-100 flex items-center pt-16">
+    <section id="product" className="h-full w-full bg-gray-100 flex items-center pt-5">
       <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="text-center mb-16">
