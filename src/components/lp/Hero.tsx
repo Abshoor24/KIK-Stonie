@@ -4,7 +4,7 @@ import Image from "next/image"
 import TextType from "@/shared/shadcn/TextType";
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden">
+    <section id="hero" className="relative w-full h-full overflow-hidden">
 
   {/* Background */}
   <Image
@@ -12,7 +12,7 @@ export default function Hero() {
     alt="Stone Background"
     fill
     priority
-    className="object-cover absolute inset-0 -z-10"
+    className="object-cover object-bottom absolute inset-0 -z-10"
     sizes="100vw"
   />
 
