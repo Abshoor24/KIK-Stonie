@@ -3,12 +3,14 @@
 import Image from "next/image"
 import posts from "@/shared/data/posts.json"
 import { useRouter } from "next/navigation"
-
 export default function Latest() {
   const router = useRouter()
   return (
-    <section id="latest" className="h-full w-full bg-gray-100 flex items-center pt-5">
-      <div className="max-w-7xl mx-auto px-8 w-full">
+<section
+id="latest"
+  data-section
+  className="min-h-screen w-full bg-gray-100 flex items-center py-20"
+>      <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
