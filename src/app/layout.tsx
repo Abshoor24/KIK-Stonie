@@ -29,14 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden flex flex-col bg-gray-100`}
       >
         <CartProvider>
           <Toaster position="top-center" />
           <Navbar />
-           <main className="flex-1 min-h-0 overflow-y-auto snap-y snap-mandatory">
-    {children}
-  </main>
+          <main className="flex-1 min-h-0 overflow-y-auto">{children}</main>
           <Footer />
         </CartProvider>
       </body>

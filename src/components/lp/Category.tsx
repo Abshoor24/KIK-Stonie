@@ -3,8 +3,11 @@ import categories from "@/shared/data/categories.json"
 
 export default function CategorySection() {
   return (
-    <section id="category" className="h-full w-full bg-gray-100 flex items-center">
-      <div className="max-w-7xl mx-auto px-8 w-full">
+<section
+id="category"
+  data-section
+  className="min-h-screen w-full bg-gray-100 flex items-center py-20"
+>      <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
