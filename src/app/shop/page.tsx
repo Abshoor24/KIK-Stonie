@@ -101,7 +101,7 @@ export default function ShopPage() {
 
       {/* PRODUCT GRID */}
       <section className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-5">
 
           {sortedProducts.map((product) => (
             <div
@@ -138,44 +138,8 @@ export default function ShopPage() {
 
 
 
-      {/* LOAD MORE */}
-      <div className="flex justify-center mt-12">
-        <button className="border px-6 py-2 hover:bg-gray-200">
-          Load more products
-        </button>
-      </div>
 
 
-
-      {/* NEWSLETTER */}
-      <section className="border-t mt-16 py-16">
-
-        <div className="max-w-xl mx-auto text-center px-6">
-
-          <h3 className="text-2xl font-semibold mb-2">
-            Sign up for our newsletter
-          </h3>
-
-          <p className="text-gray-600 mb-6">
-            Be the first to know about our special offers,
-            news, and updates.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="border px-4 py-2 flex-1"
-            />
-
-            <button className="bg-black text-white px-6 py-2">
-              Sign Up
-            </button>
-          </div>
-
-        </div>
-
-      </section>
 
     </main>
   );
