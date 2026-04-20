@@ -12,10 +12,10 @@ export default function Product() {
 <section
   data-section
   id="product"
-  className="min-h-screen w-full bg-gray-100 flex items-center py-20"
->      <div className="max-w-7xl mx-auto px-8 w-full">
+className="min-h-screen w-full bg-gray-100 flex items-center py-20 scroll-mt-16">
+        <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Produk kami
           </h2>

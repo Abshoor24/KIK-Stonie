@@ -14,32 +14,41 @@ export default function Home() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const scroller = document.querySelector("main");
+    // Kecil delay untuk memastikan DOM fully rendered
+    const timer = setTimeout(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const scroller = document.querySelector("main");
 
-    gsap.utils.toArray("[data-section]").forEach((el) => {
-      gsap.from(el, {
-        scrollTrigger: {
-          trigger: el,
-          scroller,
-          start: "top 85%",
-        },
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
+      // Kill existing triggers terlebih dahulu
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+      gsap.utils.toArray("[data-section]").forEach((el) => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start: "top 85%",
+          },
+          y: 60,
+          duration: 0.8,
+        });
       });
-    });
 
-    const sectionId = searchParams.get("scroll");
-    if (sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-        router.replace("/", { scroll: false });
+      // Refresh ScrollTrigger setelah semua animations diset
+      ScrollTrigger.refresh();
+
+      const sectionId = searchParams.get("scroll");
+      if (sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+          router.replace("/", { scroll: false });
+        }
       }
-    }
+    }, 50);
 
     return () => {
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [router, searchParams]);
