@@ -22,7 +22,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="px-2 text-center max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight md:leading-[1.2] tracking-tight text-black">
+        <h1 className="hero-heading text-4xl md:text-5xl font-bold leading-tight md:leading-[1.2] tracking-tight text-black">
           <TextType
             text={[
               "Jika di sakiti, jangan di ambil hati. Di usahakan ambil stone dari stonie",
