@@ -7,7 +7,7 @@ export default function CategorySection() {
 id="category"
   data-section
 className="min-h-screen w-full bg-gray-100 flex items-center py-20 scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-8 w-full">
+        <div className="max-w-7xl mx-auto px-8 w-full responsive-section">
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

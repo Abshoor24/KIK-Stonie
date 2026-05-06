@@ -10,7 +10,7 @@ export default function Latest() {
 id="latest"
   data-section
 className="min-h-screen w-full bg-gray-100 flex items-center py-20 scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-8 w-full">
+        <div className="max-w-7xl mx-auto px-8 w-full responsive-section">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -28,11 +28,11 @@ className="min-h-screen w-full bg-gray-100 flex items-center py-20 scroll-mt-16"
 
         {/* Cards */}
         <div className="flex justify-center">
-          <div className="flex gap-12 items-center">
+          <div className="latest-card-row flex gap-12 items-center">
             {/* LEFT CARD */}
             {posts.map(({ name, image_url }, i) => {
               return (
-                <div key={i} className="w-75 h-90 bg-[#F4F0E6] p-6">
+                <div key={i} className="latest-card w-75 h-90 bg-[#F4F0E6] p-6">
                   <div className="relative w-full h-full">
                     <Image
                       src={image_url}

@@ -32,7 +32,7 @@ export default function ShopPage() {
     <main className="bg-gray-100 text-gray-900 pt-30">
       
       {/* HEADER */}
-      <section className="max-w-6xl mx-auto px-6 mb-10">
+      <section className="max-w-6xl mx-auto px-6 mb-10 responsive-section">
         <h1 className="text-3xl font-bold mb-3">Shop</h1>
 
         <p className="text-gray-600 max-w-xl text-sm md:text-base">
@@ -44,7 +44,7 @@ export default function ShopPage() {
 
 
       {/* FILTER */}
-      <section className="max-w-6xl mx-auto px-6 mb-10">
+      <section className="max-w-6xl mx-auto px-6 mb-10 responsive-section">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
           <div>
             <h3 className="font-semibold mb-3">Filters</h3>
@@ -100,7 +100,7 @@ export default function ShopPage() {
 
 
       {/* PRODUCT GRID */}
-      <section className="max-w-6xl mx-auto px-6">
+      <section className="max-w-6xl mx-auto px-6 responsive-section">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-5">
 
           {sortedProducts.map((product) => (
